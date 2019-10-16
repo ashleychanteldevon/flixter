@@ -21,6 +21,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'figaro'
 gem 'fog-aws'
+gem 'mini_magick'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

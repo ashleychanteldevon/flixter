@@ -16,7 +16,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
-    @image = Image.find_by_id(params[:id])
+
   end
 
   private
