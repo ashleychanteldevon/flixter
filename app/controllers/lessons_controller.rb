@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_action :require_enrollment_to_view_lessons, only: [:show]
   
   def show
+    @lesson = current_lesson
   end
   
   private
