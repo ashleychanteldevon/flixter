@@ -6,10 +6,12 @@ class Instructor::LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
   end
+
   def create
     @lesson = current_section.lessons.create(lesson_params)
     redirect_to instructor_course_path(current_section.course)
   end
+
   def update
     current_lesson.update_attributes(lesson_params)
     render_plain: 'Updated!'
@@ -36,6 +38,10 @@ class Instructor::LessonsController < ApplicationController
   helper_method :current_section
   def current_section
     @current_section ||= Section.find(params[:section_id])
+  end
+
+  def initialize_lesson
+    @lesson = Lesson.new
   end
 
   def lesson_params
