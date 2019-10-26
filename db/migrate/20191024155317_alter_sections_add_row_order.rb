@@ -1,6 +1,6 @@
 class AlterSectionsAddRowOrder < ActiveRecord::Migration[5.2]
   def change
-    add_column : courses, :row_order, :integer
-    add_index : courses, :row_order
+    add_column :sections, :row_order, :integer
+    add_index :sections, :row_order
   end
 end

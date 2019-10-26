@@ -1,3 +1,4 @@
+  
 class Instructor::CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_current_course, only: [:show]
@@ -5,7 +6,6 @@ class Instructor::CoursesController < ApplicationController
   def new
     @course = Course.new
   end
-
   def create
     @course = current_user.courses.create(course_params)
     if @course.valid?
@@ -14,9 +14,8 @@ class Instructor::CoursesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
   def show
-    @course = Course.find(params[:id])
+    @section = Section.new
   end
 
   private
@@ -35,4 +34,5 @@ class Instructor::CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:title, :description, :cost, :image)
   end
+
 end
